@@ -1,7 +1,7 @@
 ```markdown
 # Real-Time Bidding System
 
-This is a Laravel-based backend for a Real-Time Bidding (RTB) System, built with Laravel 10, MySQL, Redis, and Docker. The system supports user authentication, ad slot management, bid placement, and automatic bid evaluation using Laravel Queues and Scheduler.
+This is a Laravel-based backend for a Real-Time Bidding (RTB) System, built with Laravel 12, MySQL, Redis, and Docker. The system supports user authentication, ad slot management, bid placement, and automatic bid evaluation using Laravel Queues and Scheduler.
 
 ## Features
 - User authentication with Laravel Sanctum
@@ -21,8 +21,8 @@ This is a Laravel-based backend for a Real-Time Bidding (RTB) System, built with
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd rtb-system
+   git clone https://github.com/RatheeshN/rtb_system.git
+   cd rtb_system
    ```
 
 2. Copy `.env.example` to `.env`:
