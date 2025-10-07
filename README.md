@@ -65,8 +65,8 @@ This is a Laravel-based backend for a Real-Time Bidding (RTB) System, built with
 - API endpoints are prefixed with `/api`.
 
 ### Sample User Credentials
-- Admin: `admin@example.com` / `password`
-- User: `user@example.com` / `password`
+- Admin: `admin@gmail.com` / `password`
+- User: `user@gmail.com` / `password`
 
 ## API Endpoints
 - **POST /api/login**: Authenticate and get token
