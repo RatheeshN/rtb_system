@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: rtb-app
+    container_name: rtb-app
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - DB_HOST=db
+      - DB_DATABASE=rtb_system
+      - DB_USERNAME=root
+      - DB_PASSWORD=
+      - QUEUE_CONNECTION=redis
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - db
+      - redis
+    command: >
+      sh -c "php artisan migrate --seed && php artisan serve --host=0.0.0.0 --port=8000"
+
+  db:
+    image: mysql:8.0
+    container_name: rtb-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=rtb
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+
+  redis:
+    image: redis:6.2
+    container_name: rtb-redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  db-data:
